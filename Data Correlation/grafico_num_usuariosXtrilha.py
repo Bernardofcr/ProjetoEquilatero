@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import random
 
 n=5 #numero de colunas
 ind=np.arange(n) #localização das colunas
@@ -12,17 +13,21 @@ para o numero de pessoas precisa-se fazer uma função para calcular
 número de pessoas, com e sem def, andaram dentro dos limites, 1, 2.5,
 5, 7.5 e 10 kilometros e jogar valores nos arrais
 '''
-cDef=[2,4,6,8,10]
-sDef=[1,3,5,7,9]
+cDef=[]
+sDef=[]
+for x in range (n):
+	cDef.append(random.randint(0,10))
+for x in range (n):
+	sDef.append(random.randint(0,10))
 
 cDplot=plt.bar(ind, cDef, largura,
-	color='r',
+	color='#5e35b1',
 	#error_kw=dict(elinewidth=6),
-	ecolor='red')
+	ecolor='#4caf50')
 sDplot=plt.bar(ind+largura, sDef, largura,
-	color='g',
+	color='#ffc107',
 	#error_kw=dict(elinewidth=6),
-	ecolor='green')
+	ecolor='#4caf50')
 
 plt.ylabel('numero de pessoas')
 plt.title('numero de pessoas\nX\nkm andados')
