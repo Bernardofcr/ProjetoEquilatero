@@ -17,13 +17,13 @@ fig, ax=plt.subplots()
 index=np.arange(grupos)
 largura=.4
 
-opacidade=.3
+opacidade=1
 errorCon={'ecolor':'.3'}
 
-rects1=ax.bar(index,comDef,largura,alpha=opacidade,color='b',
+rects1=ax.bar(index,comDef,largura,alpha=opacidade,color='#5e35b1',
 	error_kw=errorCon, label='Com deficiencia')
-rects2=ax.bar(index+largura,semDef,largura,alpha=opacidade,color='r',
-        error_kw=errorCon,label='Sem deficiencia')
+rects2=ax.bar(index+largura,semDef,largura,alpha=opacidade,
+	color='#ffc107',error_kw=errorCon,label='Sem deficiencia')
 ax.set_xlabel('Km andados')
 ax.set_ylabel('numero de pessoas')
 ax.set_title('Kms andados por numero de pessoas com ou sem deficiencia')
