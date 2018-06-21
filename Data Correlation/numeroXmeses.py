@@ -1,6 +1,7 @@
 #---------Numero de pessoas com e sem def por mês-----------#
 import numpy as np
 import matplotlib.pyplot as plt
+import random
 
 n=12 #numero de colunas
 ind=np.arange(n) #localização das colunas
@@ -12,19 +13,24 @@ para o numero de pessoas precisa-se fazer uma função para calcular
 número de pessoas, com e sem def, andaram em meses especificios,
 mostrando os momentos no ano em que a trilha esta mais calma ou agitada
 '''
-cDef=[1,2,3,4,5,6,7,8,9,10,11,12]
-sDef=[1,2,3,4,5,6,7,8,9,10,11,12]
+cDef=[]
+sDef=[]
+for x in range (n):
+	cDef.append(random.randint(0,10))
+for x in range (n):
+	sDef.append(random.randint(0,10))
+
 
 cDplot=plt.bar(ind, cDef, largura,
-	color='r',
+	color='#5e35b1',
 	#error_kw=dict(elinewidth=6),
-	ecolor='red')
+	ecolor='#4caf50')
 sDplot=plt.bar(ind+largura, sDef, largura,
-	color='g',
+	color='#ffc107',
 	#error_kw=dict(elinewidth=6),
-	ecolor='green')
+	ecolor='#4caf50')
 
-plt.ylabel('numero de pessoas')
+plt.ylabel('numero de pessoas em centenas')
 plt.title('numero de usuarios em trilhas\ndurante meses no ano')
 plt.xticks(ind+largura,('jan','fev','mar','abr','mai','jun','jul',
 	'ago','set','out','nov','dez'))
