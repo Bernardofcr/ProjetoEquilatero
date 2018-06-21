@@ -8,13 +8,13 @@ fig,ax=plt.subplots(figsize=(6,3),subplot_kw=dict(aspect='equal'))
 
 segmentos=[cDef,sDef]
 grupos=['com deficiência','sem deficiência']
-cores=['r','g']
+cores=['#5e35b1','#ffc107']
 
 def func(pct,allvals):
 	absolute=int(pct/100.*np.sum(allvals))
 	return "{:.1f}%\n({:d})".format(pct,absolute)
 wedges, texts, autotexts=ax.pie(segmentos,autopct=lambda pct: func(pct,segmentos),
-	textprops=dict(color='w'),colors=cores)
+	textprops=dict(color='#4caf50'),colors=cores)
 
 ax.legend(wedges, grupos,
 	title='numero de pessos',
